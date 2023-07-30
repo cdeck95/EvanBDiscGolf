@@ -15,6 +15,8 @@ export const facebookURL = "https://www.facebook.com/evanbjammin/";
 export const instagramURL = "https://www.instagram.com/evanbdiscgolfin/";
 
 function App() {
+
+  //comment for push
   
 
   const [isVisible, setIsVisible] = useState(false);
@@ -27,6 +29,7 @@ function App() {
         behavior: "smooth"
         });
     };
+    
     
     useEffect(() => {
         // Button is displayed after scrolling for 500 pixels
