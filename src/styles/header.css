@@ -1,10 +1,21 @@
-.row-banner {
-    background-image: url('../assets/teaching4.jpg');
-    height: 100%;
-    width: 100%;
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
 }
 
-.header {
-    height: 100%;
-    width: 100%;
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Bebas Neue';
+    color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

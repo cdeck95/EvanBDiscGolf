@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-export default class Porfolio extends Component {
+export default class ServicesW extends Component {
   render() {
     return (
       <section id="portfolio">

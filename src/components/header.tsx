@@ -1,51 +1,53 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from "react";
 import "../styles/header.css";
-export default class Header extends Component {
-  render() {
-    return (
-      <React.Fragment>
-      
-      <div className="header">
-         <nav id="nav-wrap">
-            <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-            <a className="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-            <ul id="nav" className="nav">
-               <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
-               <li><a className="smoothscroll" href="#about">About</a></li>
-             <li><a className="smoothscroll" href="#resume">Resume</a></li>
-               <li><a className="smoothscroll" href="#portfolio">Works</a></li>
-               <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
-               <li><a className="smoothscroll" href="#contact">Contact</a></li>
-            </ul>
-         </nav>
+import ShopOutlinedIcon from '@mui/icons-material/ShopOutlined';
+import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
+function Header() {
+    const [value, setValue] = React.useState('Home');
 
-         <div className="row-banner">
-            <div className="banner-text">
-               <h1 className="responsive-headline">I am Evan Boyle.</h1>
-               <h3 style={{color:'#fff', fontFamily:'sans-serif '}}>I am a professional Disc Golfer, offering classes & lessons to everyone from beginners to advanced players. 
-               </h3>
-               <hr/>
-               <ul className="social">
-                  {/* {
-                    resumeData.socialLinks && resumeData.socialLinks.map(item =>{
-                      return(
-                              <li key={item.name}>
-                                <a href={item.url} target="_blank"><i className={item.className}></i></a>
-                              </li>
-                            )
-                          }
-                    )
-                  } */}
-               </ul>
-            </div>
-         </div>
+    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+        setValue(newValue);
+    };
 
-         <p className="scrolldown">
-            <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
-         </p>
+    const darkGreenColor = getComputedStyle(
+        document.documentElement
+      ).getPropertyValue("--dark-green");
+    const lightGreenColor = getComputedStyle(
+    document.documentElement
+    ).getPropertyValue("--light-green");
+    const backgroundColor = getComputedStyle(
+    document.documentElement
+    ).getPropertyValue("--tan");
+    const darkTanColor = getComputedStyle(
+    document.documentElement
+    ).getPropertyValue("--dark-tan");
+    const whiteColor = getComputedStyle(
+    document.documentElement
+    ).getPropertyValue("--white");
 
-      </div>
-      </React.Fragment>
-    );
-  }
+  return (
+    <Box className="header">
+        <Typography className="header-title" sx={{ color: darkGreenColor }}> #DiscGolf </Typography>
+        <Tabs
+        value={value}
+        onChange={handleChange}
+        textColor="secondary"
+        indicatorColor="secondary"
+        aria-label="secondary tabs example">
+            <Tab value="Home" label="Home" />
+            <Tab value="About" label="About" />
+            <Tab value="Services" label="Services" />
+            <Tab value="Testimonials" label="Testimonials" />
+            <Tab value="Contact" label="Contact" />            
+        </Tabs>    
+        <Button onClick={() => window.open("https://shopify.com")}>
+            <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+                <Typography sx={{ textAlign: "left", marginRight: "5px", alignItems: "center", justifyContent: "center" }}>Shop Now</Typography>
+                <ShopOutlinedIcon fontSize="small" sx={{ paddingBottom: "3.5px"}}/>
+            </Box>
+        </Button>    
+    </Box>
+  );
 }
+
+export default Header;
