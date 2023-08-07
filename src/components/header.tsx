@@ -1,7 +1,9 @@
 import React, { Component, useEffect, useState } from "react";
 import "../styles/header.css";
 import ShopOutlinedIcon from '@mui/icons-material/ShopOutlined';
-import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Button, Link, Tab, Tabs, Typography } from "@mui/material";
+import siteLogo from '../assets/temp-site-logo.png';
+
 function Header() {
     const [value, setValue] = React.useState('Home');
 
@@ -27,12 +29,14 @@ function Header() {
 
   return (
     <Box className="header">
-        <Typography className="header-title" sx={{ color: darkGreenColor }}> #DiscGolf </Typography>
+        <Link href="#">
+          <img src={siteLogo} className="site-logo" alt="site logo"/>
+        </Link>
         <Tabs
         value={value}
         onChange={handleChange}
         textColor="secondary"
-        indicatorColor="secondary"
+        scrollButtons="auto"
         aria-label="secondary tabs example">
             <Tab value="Home" label="Home" />
             <Tab value="About" label="About" />

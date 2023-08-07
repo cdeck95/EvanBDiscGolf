@@ -20,4 +20,23 @@ code {
   --dark-tan: #b78b54;
   --white: #fdfaf4;
 }
-/* background-color: var(--tan);  */
+
+.row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-bubble {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: var(--dark-green);
+  border-radius: 50%;
+}

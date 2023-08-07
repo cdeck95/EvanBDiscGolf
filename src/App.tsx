@@ -16,8 +16,6 @@ export const instagramURL = "https://www.instagram.com/evanbdiscgolfin/";
 
 function App() {
 
-  //comment for push
-  
 
   const [isVisible, setIsVisible] = useState(false);
     
@@ -89,28 +87,35 @@ function App() {
           styleOverrides: {
             root: {
               color: darkTanColor,
+              indicatorColor: darkGreenColor,
               "&:hover": {
                 color: darkGreenColor,
               }, "&.Mui-selected": {
                 color: darkGreenColor,
-              },
+              },'& .MuiTabs-indicator': {
+                maxWidth: 40,
+                width: '100%',
+                backgroundColor: '#635ee7',
+              }
             },
           },
-        }
+        },
       },
     });
 
 
   return (
     <ThemeProvider theme={theme}>
-      <Box className="App">
+      <Box className="App" sx={{ backgroundColor: whiteColor}}>
         <Header/>
         <HeroSection/>
-        {/* <About/>
         <Services/>
-        <Testimonials/>
         <Contact/>
-        <Footer/> */}
+        {/* <About/>
+        
+        <Testimonials/>
+         */}
+        <Footer/> 
         <Box sx={{ position: "fixed", bottom: "10px", right: "10px"}} className="scroll-to-top">
           {isVisible && (
             <Fab onClick={scrollToTop} color="primary" aria-label="go up">
